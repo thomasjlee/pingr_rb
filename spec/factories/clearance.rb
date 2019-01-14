@@ -3,7 +3,7 @@ FactoryBot.define do
     "user#{n}@example.com"
   end
 
-  factory :user do
+  factory :user, aliases: [:pinger, :recipient] do
     email
     password { "password" }
   end
