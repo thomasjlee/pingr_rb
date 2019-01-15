@@ -53,6 +53,7 @@ end
 group :test do
   gem 'capybara', '~> 3.12.0'
   gem 'factory_bot_rails', '~> 4.11.1'
+  gem 'simplecov', '~> 0.16.1', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
