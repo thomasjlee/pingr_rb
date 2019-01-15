@@ -36,4 +36,8 @@ Rails.application.configure do
 
   ActionMailer::Base.delivery_method = :test
   config.action_mailer.default_url_options = { host: "localhost:3000" }
+
+  # Clearance::BackDoor for fast feature specs
+  # https://github.com/thoughtbot/clearance#fast-feature-specs
+  config.middleware.use Clearance::BackDoor
 end
