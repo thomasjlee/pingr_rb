@@ -3,7 +3,10 @@ class PingsController < ApplicationController
 
   def index
     @pings = Ping.where(recipient: current_user, read_at: nil)
-    # @pings = current_user.pings.where(read_at: nil)
+  end
+
+  def archive
+    @read_pings = Ping.where(recipient: current_user).where.not(read_at: nil)
   end
 end
 
