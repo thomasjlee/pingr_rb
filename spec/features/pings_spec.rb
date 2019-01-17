@@ -18,7 +18,7 @@ RSpec.feature "Pings", type: :feature do
       unread_ping = FactoryBot.create(:ping, recipient: @user)
       read_ping = FactoryBot.create(:ping, recipient: @user, read_at: DateTime.now)
 
-      visit archive_pings_path(as: @user)
+      visit archives_pings_path(as: @user)
 
       expect(page).to have_content read_ping.pinger.email
       expect(page).to_not have_content unread_ping.pinger.email

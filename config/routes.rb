@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
 
   resources :pings, only: [:index] do
-    get 'archive', on: :collection
+    get 'archives', on: :collection
   end
 end
