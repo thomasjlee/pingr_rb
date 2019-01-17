@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
 
-  resources :pings, only: [:index] do
+  resources :pings, only: [:index, :create] do
     get 'archives', on: :collection
   end
 end

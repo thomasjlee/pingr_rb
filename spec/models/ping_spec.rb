@@ -28,4 +28,10 @@ RSpec.describe Ping, type: :model do
     expect(association.class_name).to eq 'User'
     expect(association.macro).to eq :belongs_to
   end
+
+  it 'does not allow you to ping yourself' do
+    ping = FactoryBot.build(:ping, pinger_id: 1, recipient_id: 1)
+    ping.valid?
+    expect(ping.errors[:recipient_id]).to include "can't ping yourself"
+  end
 end

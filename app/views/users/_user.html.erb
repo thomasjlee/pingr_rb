@@ -1,1 +1,5 @@
 <%= user.email %>
+<%= form_with model: user.pings.new do |f| %>
+  <%= f.hidden_field :recipient_id %>
+  <%= f.submit %>
+<% end %>
