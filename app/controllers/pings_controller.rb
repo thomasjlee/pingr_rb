@@ -13,7 +13,6 @@ class PingsController < ApplicationController
     recipient = User.find(ping_params[:recipient_id])
     ping = recipient.pings.new(pinger: current_user)
     if ping.save
-      flash[:notice] = "You pinged #{recipient.email}!"
       redirect_back fallback_location: root_path
     end
   end

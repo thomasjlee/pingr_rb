@@ -1,5 +1,9 @@
-<%= user.email %>
-<%= form_with model: user.pings.new do |f| %>
-  <%= f.hidden_field :recipient_id %>
-  <%= f.submit %>
-<% end %>
+<li class="list-group-item rounded-0">
+  <div class="d-flex justify-content-start align-items-center">
+    <%= form_with model: user.pings.new, class: "mr-2" do |f| %>
+      <%= f.hidden_field :recipient_id %>
+      <%= f.submit "ping!", class: "btn btn-info"  %>
+    <% end %>
+    <%= user.email %>
+  </div>
+</li>
