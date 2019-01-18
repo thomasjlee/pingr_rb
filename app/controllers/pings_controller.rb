@@ -19,7 +19,6 @@ class PingsController < ApplicationController
   end
 
   private
-
     def ping_params
       params.require(:ping).permit(:recipient_id)
     end
