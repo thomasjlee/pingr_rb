@@ -1,0 +1,8 @@
+.sign-out-btn {
+  @extend .text-info;
+  cursor: pointer;
+  &:hover {
+    color: darken($info, 15%) !important;
+  }
+}
+

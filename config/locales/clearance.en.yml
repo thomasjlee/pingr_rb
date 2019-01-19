@@ -20,22 +20,22 @@ en:
   helpers:
     label:
       password:
-        email: Email address
+        email: email address
       password_reset:
-        password: Choose password
+        password: choose password
     submit:
       password:
-        submit: Reset password
+        submit: reset
       password_reset:
-        submit: Save this password
+        submit: save this password
       session:
-        submit: Sign in
+        submit: sign in
       user:
-        create: Sign up
+        create: sign up
   layouts:
     application:
-      sign_in: Sign in
-      sign_out: Sign out
+      sign_in: sign in
+      sign_out: sign out
   passwords:
     create:
       description: You will receive an email within the next few minutes. It
@@ -46,14 +46,14 @@ en:
     new:
       description: To be emailed a link to reset your password, please enter
         your email address.
-      title: Reset your password
+      title: reset your password
   sessions:
     form:
-      forgot_password: Forgot password?
-      sign_up: Sign up
+      forgot_password: forgot password?
+      sign_up: sign up
     new:
-      title: Sign in
+      title: sign in
   users:
     new:
-      sign_in: Sign in
-      title: Sign up
+      sign_in: sign in
+      title: sign up
