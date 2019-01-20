@@ -16,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def online?
-    Redis.new.get("user_#{self.id}_online") == "1"
+    Redis.new(url: ENV.fetch('REDISTOGO_URL', 'redis://localhost:6379')).get("user_#{self.id}_online") == "1"
   end
 end
