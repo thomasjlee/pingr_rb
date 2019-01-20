@@ -1,18 +1,21 @@
+<% provide :title, t('.title') %>
 <div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
-
-  <p><%= t(".description") %></p>
+  <p class='ml-3 text-secondary'><%= t(".description") %></p>
 
   <%= form_for :password_reset,
         url: user_password_path(@user, token: @user.confirmation_token),
         html: { method: :put } do |form| %>
-    <div class="password-field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+    <div class="form-group">
+      <div class="col-4">
+        <%= form.label :password, class: 'text-secondary' %>
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="form-group">
+      <div class="col-4">
+        <%= form.submit class: 'btn btn-info' %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -1,15 +1,21 @@
 <% provide :title, t('.title') %>
 <div id="clearance" class="password-reset">
-  <p><%= t(".description") %></p>
+  <p class='ml-3 text-secondary'>
+    <%= t(".description") %>
+  </p>
 
   <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
+    <div class="form-group">
+      <div class="col-4">
+        <%= form.label :email, class: 'text-secondary' %>
+        <%= form.text_field :email, type: 'email', class: 'form-control' %>
+      </div>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="form-group">
+      <div class="col-4">
+        <%= form.submit class: 'btn btn-info' %>
+      </div>
     </div>
   <% end %>
 </div>

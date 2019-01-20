@@ -6,13 +6,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>
+  <% flash.each do |key, value| -%>
+    <p class='font-italic text-secondary ml-3 mb-0 p-0'><%=h value %></p>
+  <% end %>
 
-  <h3 class="text-secondary ml-3">
+  <h3 class="text-secondary ml-3 <%= flash.any? ? 'mt-0' : 'mt-4' %>">
     <%= yield :title %>
   </h3>
   <%= render 'shared/nav' %>

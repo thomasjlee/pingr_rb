@@ -3,12 +3,12 @@
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="form-group">
+      <div class="col-4">
+        <%= form.submit class: 'btn btn-info' %>
+      </div>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
+    <%= link_to t(".sign_in"), sign_in_path, class: 'text-info p-3' %>
   <% end %>
 </div>

@@ -3,20 +3,20 @@ en:
   clearance:
     models:
       clearance_mailer:
-        change_password: Change your password
+        change_password: change your password
   clearance_mailer:
     change_password:
-      closing: If you didn't request this, ignore this email. Your password has
+      closing: if you didn't request this, ignore this email. your password has
         not been changed.
-      link_text: Change my password
-      opening: "Someone, hopefully you, requested we send you a link to change
+      link_text: change my password
+      opening: "someone, hopefully you, requested we send you a link to change
         your password:"
   flashes:
-    failure_after_create: Bad email or password.
-    failure_after_update: Password can't be blank.
-    failure_when_forbidden: Please double check the URL or try submitting
-      the form again.
-    failure_when_not_signed_in: Please sign in to continue.
+    failure_after_create: bad email or password
+    failure_after_update: password can't be blank
+    failure_when_forbidden: please double check the URL or try submitting
+      the form again
+    failure_when_not_signed_in: please sign in to continue
   helpers:
     label:
       password:
@@ -38,13 +38,13 @@ en:
       sign_out: sign out
   passwords:
     create:
-      description: You will receive an email within the next few minutes. It
+      description: you will receive an email within the next few minutes. it
         contains instructions for changing your password.
     edit:
-      description: Your password has been reset. Choose a new password below.
-      title: Change your password
+      description: your password has been reset. choose a new password below.
+      title: change your password
     new:
-      description: To be emailed a link to reset your password, please enter
+      description: to be emailed a link to reset your password, please enter
         your email address.
       title: reset your password
   sessions:

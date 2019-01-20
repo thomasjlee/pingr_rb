@@ -1,5 +1,5 @@
 <li class="list-group-item rounded-0">
-  <div class="d-flex justify-content-start align-items-center">
+  <div class="d-flex justify-content-start align-items-center text-dark">
     <%= form_with model: user.pings.new, class: "mr-2" do |f| %>
       <%= f.hidden_field :recipient_id %>
       <%= f.submit "ping!", class: "btn btn-info"  %>
