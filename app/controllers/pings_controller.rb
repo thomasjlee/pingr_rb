@@ -2,7 +2,7 @@ class PingsController < ApplicationController
   before_action :require_login, except: :create
 
   def index
-    @pings = Ping.where(recipient: current_user, read_at: nil)
+    @pings = current_user.unread_pings
   end
 
   def archives
@@ -13,12 +13,12 @@ class PingsController < ApplicationController
     if !signed_in?
       redirect_to sign_in_path
       flash[:alert] = 'you must be signed in to ping'
-    end
-
-    recipient = User.find(ping_params[:recipient_id])
-    ping = recipient.pings.new(pinger: current_user)
-    if ping.save
-      redirect_back fallback_location: root_path
+    else
+      recipient = User.find(ping_params[:recipient_id])
+      ping = recipient.pings.new(pinger: current_user)
+      if ping.save
+        redirect_back fallback_location: root_path
+      end
     end
   end
 
