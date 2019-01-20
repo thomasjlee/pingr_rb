@@ -1,5 +1,5 @@
 class PingsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: :create
 
   def index
     @pings = Ping.where(recipient: current_user, read_at: nil)
@@ -10,6 +10,11 @@ class PingsController < ApplicationController
   end
 
   def create
+    if !signed_in?
+      redirect_to sign_in_path
+      flash[:alert] = 'you must be signed in to ping'
+    end
+
     recipient = User.find(ping_params[:recipient_id])
     ping = recipient.pings.new(pinger: current_user)
     if ping.save
