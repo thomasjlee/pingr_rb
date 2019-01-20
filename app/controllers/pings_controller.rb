@@ -6,7 +6,9 @@ class PingsController < ApplicationController
   end
 
   def archives
-    @read_pings = Ping.where(recipient: current_user).where.not(read_at: nil)
+    @read_pings = Ping.where(recipient: current_user)
+                      .where.not(read_at: nil)
+                      .order(created_at: :desc)
   end
 
   def create

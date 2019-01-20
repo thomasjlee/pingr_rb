@@ -13,5 +13,8 @@ App.pings = App.cable.subscriptions.create("PingsChannel", {
     if (unreadPings) {
       unreadPings.insertAdjacentHTML('afterbegin', data.html) 
     }
+    unreadPingsCount = document.querySelector('[data-unread_pings_count]')
+    count = parseInt(unreadPingsCount.textContent)
+    unreadPingsCount.textContent = ++count
   }
 });

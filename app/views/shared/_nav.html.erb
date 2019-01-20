@@ -5,7 +5,7 @@
   <% if signed_in? -%>
     <li class="nav-item">
       <a href="<%= pings_path %>" class="nav-link text-info">
-        pings <span class="badge badge-pings-count"><%= current_user.unread_pings.count %></span>
+        pings <span class="badge badge-pings-count" data-unread_pings_count><%= current_user.unread_pings.count %></span>
       </a>
     </li>
     <li class="nav-item">

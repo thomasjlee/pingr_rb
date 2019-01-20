@@ -1,6 +1,6 @@
 <li class="list-group-item rounded-0">
-  <div class="d-flex justify-content-start align-items-center text-dark <%= 'my-2' if current_page?(archives_path) %>">
-    <% if current_page?(pings_path) -%>
+  <div class="d-flex justify-content-start align-items-center text-dark <%= 'my-2' unless ping.read_at.nil? %>">
+    <% if ping.read_at.nil? -%>
       <%= form_with model: ping, method: :put, class: "mr-2" do |f| %>
         <%= f.hidden_field :read_at %>
         <%= f.submit "cool", class: "btn btn-outline-secondary"  %>
