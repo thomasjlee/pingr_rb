@@ -31,7 +31,7 @@ document.addEventListener('turbolinks:load', function() {
           unreadPingsCount = this.unreadPingsCountSpan()
           count = parseInt(unreadPingsCount.textContent)
           unreadPingsCount.textContent = ++count
-          unreadPingsCount.classList.add('badge-danger')
+          unreadPingsCount.classList.add('badge-purple')
           unreadPingsCount.classList.remove('badge-secondary')
         },
 

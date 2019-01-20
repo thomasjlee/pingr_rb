@@ -2,8 +2,13 @@
   <div class="d-flex justify-content-start align-items-center text-dark">
     <%= form_with model: user.pings.new, class: "mr-2" do |f| %>
       <%= f.hidden_field :recipient_id %>
-      <%= f.submit "ping!", class: "btn btn-info"  %>
+      <%= f.submit "ping!", class: "btn #{ signed_in? ? 'btn-info' : 'btn-secondary'}"  %>
     <% end %>
-    <%= user.email %>
+    <%= render 'online_indicator', user: user if signed_in? %>
+    <span
+       data-email_for_user="<%= user.id %>"
+       class="<%= signed_in? && user.online? ? 'user-online' : 'user-offline' %>">
+      <%= user.email %>
+    </span>
   </div>
 </li>
