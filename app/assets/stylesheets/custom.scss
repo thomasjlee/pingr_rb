@@ -6,7 +6,21 @@
   }
 }
 
-.badge-pings-count {
-  background-color: pink;
-  color: $light;
+.exclaim {
+  color: $danger;
+  font-weight: bold;
+  position: absolute;
+  z-index: 100;
+  margin-left: 6px;
+  top: 58px;
+  animation: fade-away 0.2s linear forwards;
+}
+
+@keyframes fade-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

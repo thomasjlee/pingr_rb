@@ -5,7 +5,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tag %>
   <% if signed_in? %>
-    <%= tag :meta, name: 'current-user', data: { id: current_user.id } %>
+    <%= tag :meta, name: 'current_user', data: { id: current_user.id } %>
   <% end %>
 </head>
 <body>
