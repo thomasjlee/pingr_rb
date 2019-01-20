@@ -18,8 +18,15 @@ class Ping < ApplicationRecord
     def notify_pinged
       PingsChannel.broadcast_to(
         recipient,
-        html: ApplicationController.render(partial: 'pings/ping',
-                                           locals: { ping: self })
+        html: {
+          ping: ApplicationController.render(
+            partial: 'pings/ping',
+            locals: { ping: self }
+          ),
+          mark_all_as_read: ApplicationController.render(
+            partial: 'pings/mark_all_as_read'
+          )
+        }
       )
     end
 end
