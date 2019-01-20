@@ -2,3 +2,8 @@
 <ul class="list-group" data-unread_pings>
   <%= render @pings %>
 </ul>
+<% if @pings.any? -%>
+  <%= form_with url: mark_all_as_read_pings_path, method: :put, class: "pl-3 mt-2" do |f| %>
+    <%= f.submit "all good", class: "btn btn-secondary"  %>
+  <% end %>
+<% end -%>

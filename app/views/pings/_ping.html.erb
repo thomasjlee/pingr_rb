@@ -1,5 +1,14 @@
 <li class="list-group-item rounded-0">
-  <div class="d-flex justify-content-start align-items-center text-dark">
+  <div class="d-flex justify-content-start align-items-center text-dark <%= 'my-2' if current_page?(archives_path) %>">
+    <% if current_page?(pings_path) -%>
+      <%= form_with model: ping, method: :put, class: "mr-2" do |f| %>
+        <%= f.hidden_field :read_at %>
+        <%= f.submit "cool", class: "btn btn-outline-secondary"  %>
+      <% end %>
+    <% end -%>
     <%= ping.pinger.email %> pinged you!
+    <span class='font-italic text-secondary ml-1'>
+      <%= time_ago_in_words(ping.created_at) %> ago
+    </span>
   </div>
 </li>

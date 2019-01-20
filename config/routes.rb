@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
 
-  resources :pings, only: [:index, :create]
+  resources :pings, only: [:index, :create, :update] do
+    put :mark_all_as_read, on: :collection
+  end
 
   get "/archives", to: "pings#archives"
 end
