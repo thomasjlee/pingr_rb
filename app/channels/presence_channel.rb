@@ -12,6 +12,6 @@ class PresenceChannel < ApplicationCable::Channel
 
   private
     def redis
-      Redis.new
+      Redis.new url: ENV.fetch('REDISTOGO_URL', 'redis://localhost:6379')
     end
 end
