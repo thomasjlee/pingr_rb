@@ -6,4 +6,14 @@ class User < ApplicationRecord
   def unread_pings
     self.pings.where(read_at: nil).order(created_at: :desc)
   end
+
+  def appear
+    update_column :online, true
+    ActionCable.server.broadcast('presence_channel', user_id: id, online: true)
+  end
+
+  def disappear
+    update_column :online, false
+    ActionCable.server.broadcast('presence_channel', user_id: id, online: false)
+  end
 end
