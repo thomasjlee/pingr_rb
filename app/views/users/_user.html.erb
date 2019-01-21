@@ -8,7 +8,7 @@
     <span
        data-email_for_user="<%= user.id %>"
        class="<%= signed_in? && user.online? ? 'user-online' : 'user-offline' %>">
-      <%= user.email %>
+      <%= user.username %>
     </span>
   </div>
 </li>
