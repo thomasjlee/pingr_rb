@@ -16,6 +16,7 @@
 
   <h3 class="text-secondary ml-3 <%= flash.any? ? 'mt-0' : 'mt-4' %>">
     <%= yield :title %>
+    <span data-is_online></span>
   </h3>
   <%= render 'shared/nav' %>
   <%= yield %>

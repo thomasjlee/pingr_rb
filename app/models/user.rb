@@ -13,11 +13,11 @@ class User < ApplicationRecord
 
   def appear
     update_column :online, true
-    ActionCable.server.broadcast('presence_channel', user_id: id, online: true)
+    ActionCable.server.broadcast('presence_channel', user_id: id, online: true, username: username)
   end
 
   def disappear
     update_column :online, false
-    ActionCable.server.broadcast('presence_channel', user_id: id, online: false)
+    ActionCable.server.broadcast('presence_channel', user_id: id, online: false, username: username)
   end
 end

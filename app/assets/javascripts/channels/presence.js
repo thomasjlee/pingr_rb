@@ -9,10 +9,11 @@ document.addEventListener('turbolinks:load', function() {
         received: function(data) {
           var online = data['online']
           var userId = data['user_id']
-          online ? this.notifyOnline(userId) : this.notifyOffline(userId)
+          var username = data['username']
+          online ? this.notifyOnline(userId, username) : this.notifyOffline(userId)
         },
 
-        notifyOnline: function(userId) {
+        notifyOnline: function(userId, username) {
           var emailForUser = this.emailForUser(userId)
           if (emailForUser) {
             emailForUser.classList.add('user-online')
@@ -24,6 +25,12 @@ document.addEventListener('turbolinks:load', function() {
             onlineIndicator.classList.add('bg-purple')
             onlineIndicator.classList.remove('bg-secondary')
           }
+
+
+          var notification = '<span class="is-online">' + username  + ' is now online</span>'
+          var notificationHolder = document.querySelector('[data-is_online]')
+          notificationHolder.innerHTML = ''
+          notificationHolder.insertAdjacentHTML('afterbegin', notification)
         },
 
         notifyOffline: function(userId) {

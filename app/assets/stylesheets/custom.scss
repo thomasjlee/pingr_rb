@@ -25,6 +25,12 @@
   }
 }
 
+.is-online {
+  font-size: 0.9rem;
+  font-style: italic;
+  animation: fade-away 2s linear forwards;
+}
+
 .online-indicator {
   height: 7px;
   width: 7px;
