@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:8bd2beac933d51ea0c530fd0e2c0c198@tetra.redistogo.com:9281/
+  url: <%= ENV.fetch("REDISTOGO_URL", "ws://localhost:3000/cable/") %>
   channel_prefix: pingr_rb_production
