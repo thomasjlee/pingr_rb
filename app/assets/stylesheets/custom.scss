@@ -50,3 +50,7 @@
   font-style: normal;
   color: $dark;
 }
+
+.nav-link {
+  @extend .nav-link, .pr-2;
+}
