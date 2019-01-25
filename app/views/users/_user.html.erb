@@ -1,14 +1,20 @@
 <li class="list-group-item rounded-0">
   <div class="d-flex justify-content-start align-items-center text-dark">
+
     <%= form_with model: user.pings.new, class: "mr-2" do |f| %>
       <%= f.hidden_field :recipient_id %>
       <%= f.submit "ping!", class: "btn #{ signed_in? ? 'btn-info' : 'btn-secondary'}"  %>
     <% end %>
+
     <%= render 'online_indicator', user: user if signed_in? %>
-    <span
-       data-email_for_user="<%= user.id %>"
-       class="<%= signed_in? && user.online? ? 'user-online' : 'user-offline' %>">
-      <%= user.username %>
-    </span>
+
+    <% if signed_in? %>
+      <%= content_tag 'span', user.username + " is #{user.presence_status}",
+        class: "user-#{user.presence_status}",
+        data: { email_for_user: user.id } %>
+    <% else %>
+      <%= content_tag 'span', user.username, class: 'user-offline' %>
+    <% end %>
+
   </div>
 </li>

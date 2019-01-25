@@ -28,7 +28,7 @@
 .is-online {
   font-size: 0.9rem;
   font-style: italic;
-  animation: fade-away 2s linear forwards;
+  animation: fade-away 3s linear forwards;
 }
 
 .online-indicator {
@@ -36,6 +36,15 @@
   width: 7px;
   border-radius: 50%;
   display: inline-block;
+  background-color: $purple;
+}
+
+.away-indicator {
+  @extend .online-indicator, .bg-warning;
+}
+
+.offline-indicator {
+  @extend .online-indicator, .bg-secondary;
 }
 
 .badge-purple {
@@ -47,14 +56,19 @@
   background-color: $purple;
 }
 
-.user-offline {
-  font-style: italic;
-  color: $secondary;
-}
-
 .user-online {
   font-style: normal;
   color: $dark;
+}
+
+.user-away {
+  font-style: italic;
+  color: $dark;
+}
+
+.user-offline {
+  font-style: italic;
+  color: $secondary;
 }
 
 .nav-link {

@@ -1,4 +1,4 @@
 <span
-  data-online_indicator="<%= user.id %>"
-  class="online-indicator mr-2 <%= user.online? ? 'bg-purple' : 'bg-secondary' %>">
+  data-online-indicator="<%= user.id %>"
+  class="mr-2 <%= user.presence_status %>-indicator">
 </span>
